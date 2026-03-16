@@ -6,16 +6,20 @@
     <title>Dopax</title>
     <meta
       name="description"
-      content="Dopax is an agent-native client for computer I/O operations."
+      content="Dopax is an adaptive intelligence client for files, commands, and real project work."
     />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
       :root {
-        --ink: #122033;
-        --ink-soft: #586676;
-        --sunrise: #f36a42;
-        --amber: #ffb13c;
-        --paper: #fffaf3;
-        --line: rgba(18, 32, 51, 0.08);
+        --brand: #2f445c;
+        --brand-soft: #708399;
+        --ink: #233447;
+        --ink-soft: #55697d;
+        --paper: #fcfdfe;
+        --mist: #f2f5f8;
+        --card: #ffffff;
+        --line: rgba(47, 68, 92, 0.16);
       }
 
       * {
@@ -24,12 +28,12 @@
 
       body {
         margin: 0;
-        font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+        font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
         color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(243, 106, 66, 0.16), transparent 28%),
-          radial-gradient(circle at top right, rgba(255, 177, 60, 0.18), transparent 24%),
-          linear-gradient(180deg, #fffdf9 0%, var(--paper) 100%);
+          radial-gradient(circle at top left, rgba(112, 131, 153, 0.18), transparent 30%),
+          radial-gradient(circle at 88% 18%, rgba(47, 68, 92, 0.12), transparent 24%),
+          linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
       }
 
       a {
@@ -46,67 +50,109 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 22px 0;
+        padding: 24px 0 18px;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
       }
 
       .brand img {
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand span {
+        font-family: "Sora", "Avenir Next", sans-serif;
+        font-size: 1.22rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
       }
 
       .tag {
-        color: var(--ink-soft);
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--brand);
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
       .hero {
         display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
-        gap: 42px;
-        padding: 48px 0 28px;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        padding: 44px 0 30px;
         align-items: center;
       }
 
-      .hero h1 {
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid var(--line);
+        color: var(--brand);
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--brand);
+      }
+
+      .hero h1,
+      .panel h2 {
         margin: 0;
-        font-size: clamp(3.4rem, 7vw, 6rem);
-        line-height: 0.92;
-        letter-spacing: -0.05em;
+        font-family: "Sora", "Avenir Next", sans-serif;
+      }
+
+      .hero h1 {
+        margin-top: 18px;
+        font-size: clamp(3.3rem, 7vw, 5.8rem);
+        line-height: 0.93;
+        letter-spacing: -0.055em;
+        max-width: 8ch;
       }
 
       .hero p {
-        margin: 24px 0 0;
-        max-width: 640px;
-        font-size: 1.18rem;
-        line-height: 1.7;
+        margin: 22px 0 0;
+        max-width: 620px;
+        font-size: 1.14rem;
+        line-height: 1.76;
         color: var(--ink-soft);
       }
 
       .accent {
-        background: linear-gradient(135deg, var(--sunrise), var(--amber));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        color: var(--brand);
       }
 
       .card {
-        background: rgba(255, 255, 255, 0.82);
-        backdrop-filter: blur(14px);
+        background: var(--card);
         border: 1px solid var(--line);
-        border-radius: 28px;
+        border-radius: 30px;
         padding: 26px;
-        box-shadow: 0 24px 60px rgba(18, 32, 51, 0.08);
+        box-shadow: 0 24px 56px rgba(47, 68, 92, 0.08);
+      }
+
+      .card-frame {
+        padding: 18px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
       }
 
       .card img {
@@ -114,30 +160,35 @@
         display: block;
       }
 
+      .card p {
+        margin: 18px 0 0;
+        color: var(--ink-soft);
+        line-height: 1.7;
+      }
+
       .grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
-        padding: 24px 0 56px;
+        padding: 24px 0 58px;
       }
 
       .panel {
         border-radius: 24px;
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.75);
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.9);
         border: 1px solid var(--line);
       }
 
       .panel h2 {
-        margin: 0 0 10px;
         font-size: 1.08rem;
-        letter-spacing: 0.02em;
+        letter-spacing: -0.02em;
       }
 
       .panel p {
-        margin: 0;
+        margin: 12px 0 0;
         color: var(--ink-soft);
-        line-height: 1.7;
+        line-height: 1.72;
       }
 
       .footer {
@@ -151,11 +202,12 @@
       }
 
       .footer a {
-        color: var(--ink);
+        color: var(--brand);
         font-weight: 600;
       }
 
       @media (max-width: 900px) {
+        .nav,
         .hero,
         .grid,
         .footer {
@@ -163,8 +215,18 @@
           display: grid;
         }
 
+        .nav,
         .footer {
           justify-content: initial;
+        }
+
+        .shell {
+          width: min(1120px, calc(100% - 24px));
+        }
+
+        .hero {
+          gap: 24px;
+          padding: 28px 0 24px;
         }
       }
     </style>
@@ -176,62 +238,65 @@
           <img src="./dopax-mark.svg" alt="Dopax mark" />
           <span>Dopax</span>
         </div>
-        <div class="tag">agent-native client</div>
+        <div class="tag">adaptive intelligence client</div>
       </header>
 
       <main>
         <section class="hero">
           <div>
+            <div class="eyebrow">Clear, product-led identity</div>
             <h1>
-              Computer
-              <span class="accent">I/O</span>
-              operations,
+              Computer I/O,
               <br />
-              with an
-              <span class="accent">agent</span>
-              interface.
+              <span class="accent">made clear.</span>
             </h1>
             <p>
-              Dopax is an agent-native client designed for file changes, command
-              execution, session continuity, and human-controlled autonomy
-              inside real projects.
+              Dopax is an adaptive intelligence client for reading files, making edits,
+              running commands, and carrying work forward with visible control inside
+              real projects.
             </p>
           </div>
 
           <div class="card">
-            <img src="./dopax-primary.svg" alt="Dopax logo" />
+            <div class="card-frame">
+              <img src="./dopax-primary.svg" alt="Dopax logo" />
+            </div>
+            <p>
+              The current direction keeps the brand minimal: one rounded frame, two rails,
+              and a deeper ink system that feels steadier across product surfaces.
+            </p>
           </div>
         </section>
 
         <section class="grid">
           <article class="panel">
-            <h2>Workspace-Aware</h2>
+            <h2>Workspace Context</h2>
             <p>
-              Built around project context, local files, command output, and
-              state that persists across meaningful work sessions.
+              Grounded in local files, command output, and session state so each task stays
+              attached to the real project instead of drifting into detached chat.
             </p>
           </article>
 
           <article class="panel">
-            <h2>Controlled Execution</h2>
+            <h2>Controlled Action</h2>
             <p>
-              Intended for action, not only conversation, while keeping the user
-              in control of permissions, approvals, and risky decisions.
+              Built for action rather than loose conversation, with visible approvals and
+              clear boundaries around consequential steps.
             </p>
           </article>
 
           <article class="panel">
-            <h2>Operational Clarity</h2>
+            <h2>Readable Change</h2>
             <p>
-              Every task should be understandable: what happened, why it
-              happened, and what changed in the underlying environment.
+              Every edit and command should remain legible: what happened, why it happened,
+              and what changed next in the environment.
             </p>
           </article>
         </section>
       </main>
 
       <footer class="footer">
-        <span>Early foundation for the Dopax product direction.</span>
+        <span>Early product direction aligned with the current Dopax identity.</span>
         <a href="https://github.com/tensorstaff/dopax">View repository</a>
       </footer>
     </div>

@@ -1,6 +1,6 @@
 # Dopax
 
-Agent-native client for computer I/O operations.
+Adaptive intelligence client for computer I/O operations.
 
 ## Overview
 
@@ -121,17 +121,17 @@ The runtime, client, protocol, and implementation layers described above are pro
 
 The current visual system uses:
 
-- A rounded `d`-shaped outer form for a stable and product-led silhouette
-- A crossed internal structure that hints at routing, synthesis, and decision flow
-- A warm orange-to-amber gradient to avoid generic cold-tech branding
-- A deep ink accent for contrast, readability, and trust
+- A rounded outer frame for a stable and product-led silhouette
+- Twin internal rails that suggest routing, orchestration, and handoff
+- A deep ink monochrome system to keep the logo and UI aligned
+- A heavier wordmark that reads cleanly on product surfaces
 
 Core colors:
 
-- `#F36A42`
-- `#FFB13C`
-- `#122033`
-- `#586676`
+- `#2F445C`
+- `#708399`
+- `#F2F5F8`
+- `#FCFDFE`
 
 ## Near-Term Priorities
 

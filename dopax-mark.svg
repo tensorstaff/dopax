@@ -1,18 +1,14 @@
 <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="dopaxSunriseMark" x1="30" y1="18" x2="320" y2="310" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#F36A42"/>
-      <stop offset="1" stop-color="#FFB13C"/>
-    </linearGradient>
-  </defs>
-
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M106 12C52 12 18 46 18 100V236C18 290 52 324 106 324H160C250 324 328 256 328 168C328 80 250 12 160 12H106ZM106 66C85 66 72 79 72 100V236C72 257 85 270 106 270H152C208 270 272 225 272 168C272 111 208 66 152 66H106Z"
-    fill="url(#dopaxSunriseMark)"
+  <rect
+    x="78"
+    y="78"
+    width="204"
+    height="204"
+    rx="64"
+    stroke="#2F445C"
+    stroke-width="30"
+    transform="rotate(-8 180 180)"
   />
-  <line x1="132" y1="242" x2="232" y2="98" stroke="#122033" stroke-width="28" stroke-linecap="round"/>
-  <line x1="194" y1="98" x2="294" y2="242" stroke="#122033" stroke-width="28" stroke-linecap="round"/>
-  <circle cx="278" cy="76" r="14" fill="#122033"/>
+  <path d="M136 238L192 118" stroke="#2F445C" stroke-width="26" stroke-linecap="round"/>
+  <path d="M190 238L246 118" stroke="#2F445C" stroke-width="26" stroke-linecap="round"/>
 </svg>
