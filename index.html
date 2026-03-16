@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dopax</title>
+    <meta
+      name="description"
+      content="dopax is an agent-native client for computer I/O operations."
+    />
+    <style>
+      :root {
+        --ink: #122033;
+        --ink-soft: #586676;
+        --sunrise: #f36a42;
+        --amber: #ffb13c;
+        --paper: #fffaf3;
+        --line: rgba(18, 32, 51, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(243, 106, 66, 0.16), transparent 28%),
+          radial-gradient(circle at top right, rgba(255, 177, 60, 0.18), transparent 24%),
+          linear-gradient(180deg, #fffdf9 0%, var(--paper) 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .tag {
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 42px;
+        padding: 48px 0 28px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(3.4rem, 7vw, 6rem);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+      }
+
+      .hero p {
+        margin: 24px 0 0;
+        max-width: 640px;
+        font-size: 1.18rem;
+        line-height: 1.7;
+        color: var(--ink-soft);
+      }
+
+      .accent {
+        background: linear-gradient(135deg, var(--sunrise), var(--amber));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(14px);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 26px;
+        box-shadow: 0 24px 60px rgba(18, 32, 51, 0.08);
+      }
+
+      .card img {
+        width: 100%;
+        display: block;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        padding: 24px 0 56px;
+      }
+
+      .panel {
+        border-radius: 24px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid var(--line);
+      }
+
+      .panel h2 {
+        margin: 0 0 10px;
+        font-size: 1.08rem;
+        letter-spacing: 0.02em;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--ink-soft);
+        line-height: 1.7;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        padding: 20px 0 42px;
+        color: var(--ink-soft);
+        border-top: 1px solid var(--line);
+      }
+
+      .footer a {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid,
+        .footer {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .footer {
+          justify-content: initial;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="nav">
+        <div class="brand">
+          <img src="./dopax-mark.svg" alt="dopax mark" />
+          <span>dopax</span>
+        </div>
+        <div class="tag">agent-native client</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <h1>
+              Computer
+              <span class="accent">I/O</span>
+              operations,
+              <br />
+              with an
+              <span class="accent">agent</span>
+              interface.
+            </h1>
+            <p>
+              dopax is an agent-native client designed for file changes, command
+              execution, session continuity, and human-controlled autonomy
+              inside real projects.
+            </p>
+          </div>
+
+          <div class="card">
+            <img src="./dopax-primary.svg" alt="dopax logo" />
+          </div>
+        </section>
+
+        <section class="grid">
+          <article class="panel">
+            <h2>Workspace-Aware</h2>
+            <p>
+              Built around project context, local files, command output, and
+              state that persists across meaningful work sessions.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h2>Controlled Execution</h2>
+            <p>
+              Intended for action, not only conversation, while keeping the user
+              in control of permissions, approvals, and risky decisions.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h2>Operational Clarity</h2>
+            <p>
+              Every task should be understandable: what happened, why it
+              happened, and what changed in the underlying environment.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Early foundation for the dopax product direction.</span>
+        <a href="https://github.com/tensorstaff/dopax">View repository</a>
+      </footer>
+    </div>
+  </body>
+</html>
