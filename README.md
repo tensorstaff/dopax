@@ -1,16 +1,16 @@
-# dopax
+# Dopax
 
 Agent-native client for computer I/O operations.
 
 ## Overview
 
-dopax is being designed as a focused client for computer I/O operations through an interactive agent interface. The goal is to create a product that feels native to real engineering workflows: multi-step tasks, file edits, terminal execution, project context, long-running sessions, and human-in-the-loop control.
+Dopax is being designed as a focused client for computer I/O operations through an interactive agent interface. The goal is to create a product that feels native to real engineering workflows: multi-step tasks, file edits, terminal execution, project context, long-running sessions, and human-in-the-loop control.
 
-Instead of acting like a simple chat window, dopax is intended to function as a workspace-aware operator for development tasks. It should help users reason through work, take action inside a project, and keep progress organized across sessions.
+Instead of acting like a simple chat window, Dopax is intended to function as a workspace-aware operator for development tasks. It should help users reason through work, take action inside a project, and keep progress organized across sessions.
 
 ## Product Direction
 
-dopax is being shaped around five core ideas:
+Dopax is being shaped around five core ideas:
 
 - **Agent-native interaction**: the primary interface is built around tasks, turns, tools, and follow-through.
 - **Workspace awareness**: actions should be grounded in the local project, not detached from files and runtime state.
@@ -59,7 +59,7 @@ The long-term product scope includes the following capability areas:
 
 ## Experience Principles
 
-dopax is intended to feel:
+Dopax is intended to feel:
 
 - **Fast** enough for daily use
 - **Calm** under complex or noisy workflows
@@ -107,7 +107,7 @@ At the moment, it contains:
 
 - Initial brand assets
 - Early project framing
-- A first pass at visual identity for dopax
+- A first pass at visual identity for Dopax
 
 The runtime, client, protocol, and implementation layers described above are product direction, not a published feature-complete release in this repository yet.
 
@@ -145,4 +145,4 @@ The next practical milestones are:
 
 ## Positioning
 
-dopax is meant to become a serious client for intelligent computer I/O operations: not only for asking questions, but for planning work, taking action, and staying accountable to the state of a real project.
+Dopax is meant to become a serious client for intelligent computer I/O operations: not only for asking questions, but for planning work, taking action, and staying accountable to the state of a real project.
