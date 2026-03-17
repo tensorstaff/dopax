@@ -1,148 +1,81 @@
 # Dopax
 
-Adaptive intelligence client for computer I/O operations.
+Dopax is a fork of [OpenAI Codex](https://github.com/openai/codex), developed as an adaptive intelligence client for computer I/O operations, agent workflows, and project-aware execution.
+
+The project builds on top of the Codex codebase while moving in its own direction around product design, operational workflows, and custom integrations.
 
 ## Overview
 
-Dopax is being designed as a focused client for computer I/O operations through an interactive agent interface. The goal is to create a product that feels native to real engineering workflows: multi-step tasks, file edits, terminal execution, project context, long-running sessions, and human-in-the-loop control.
+Dopax is intended to feel less like a simple chat window and more like a workspace-aware operator for engineering work.
 
-Instead of acting like a simple chat window, Dopax is intended to function as a workspace-aware operator for development tasks. It should help users reason through work, take action inside a project, and keep progress organized across sessions.
+The aim is to support real development tasks such as:
+
+- multi-step agent workflows
+- file and project awareness
+- controlled command execution
+- long-running task continuity
+- human-in-the-loop approvals
+- extensible integrations and tool layers
 
 ## Product Direction
 
-Dopax is being shaped around five core ideas:
+Dopax is currently being shaped around a few core ideas:
 
-- **Agent-native interaction**: the primary interface is built around tasks, turns, tools, and follow-through.
-- **Workspace awareness**: actions should be grounded in the local project, not detached from files and runtime state.
-- **Controlled autonomy**: the system should be capable of executing work while keeping the user in control of permissions and decisions.
-- **Operational clarity**: users should be able to understand what the agent is doing, why it is doing it, and what changed.
-- **Extensible foundations**: the client should be able to evolve across models, toolchains, runtimes, and deployment styles.
+- **Agent-native interaction**: task-oriented sessions, not just question-and-answer chat
+- **Workspace awareness**: actions should stay grounded in the actual repository and local project context
+- **Controlled autonomy**: the system should be able to act, while preserving clear user control over permissions and decisions
+- **Operational clarity**: users should be able to understand what the agent is doing and what changed
+- **Extensible foundations**: the system should evolve across models, runtimes, tools, and deployment styles
 
-## Intended Capabilities
+## Current Status
 
-The long-term product scope includes the following capability areas:
+This repository is under active development and restructuring.
 
-### 1. Interactive Agent Sessions
+There are currently **no released packages** for this project:
 
-- Task-oriented conversational workflows
-- Multi-turn reasoning with persistent thread state
-- Resume, branch, and revisit previous work
-- Structured handling of long-running tasks
+- no installable binary releases
+- no npm package
+- no Homebrew package
 
-### 2. Local Workspace Actions
+At this stage, Dopax should be built and run directly from source.
 
-- Read and edit project files
-- Run shell commands in controlled environments
-- Inspect logs, outputs, and generated artifacts
-- Track file-level changes during a session
+## Relationship To Upstream
 
-### 3. Tool Execution
+- Upstream repository: [`openai/codex`](https://github.com/openai/codex)
+- This repository is a maintained fork with project-specific customization
+- The Codex architecture and core runtime remain the technical foundation
+- Some repository structure and documentation still reflect the upstream layout and will continue to be adapted for Dopax
 
-- Built-in local tools for common development tasks
-- External tool connections through a provider-neutral tool layer
-- Permission-aware execution with clear user review points
-- Support for both synchronous and background workflows
+## Local Development
 
-### 4. Project Context Management
+The recommended way to build and run the project is from the `codex-rs` workspace:
 
-- Repository and directory awareness
-- Session memory and state continuity
-- Structured summaries of ongoing work
-- Context reduction and compaction for longer sessions
+```bash
+git clone https://github.com/tensorstaff/dopax.git
+cd dopax/codex-rs
 
-### 5. User Control and Safety
+cargo build
+cargo run --bin codex -- "explain this codebase to me"
+```
 
-- Explicit permission boundaries
-- Transparent action history
-- Interrupt, cancel, and recover flows
-- Safe handling of risky or destructive operations
+If you work on the repository regularly, you can also use the root `just` helpers:
 
-## Experience Principles
+```bash
+just fmt
+just fix -p <crate>
+```
 
-Dopax is intended to feel:
+Additional documentation:
 
-- **Fast** enough for daily use
-- **Calm** under complex or noisy workflows
-- **Readable** when the agent is making decisions
-- **Reliable** when files, commands, and session state matter
-- **Opinionated** about quality without becoming rigid
+- [Installing and building](./docs/install.md)
+- [Contributing](./docs/contributing.md)
 
-The ideal experience is less "chat assistant" and more "operational client for intelligent computer I/O operations."
+## Notes
 
-## Architecture Goals
+- Some repository documentation still describes the original upstream Codex project
+- The README, docs structure, release process, and project positioning will continue to evolve for Dopax
+- Until an official release process exists, source builds are the primary way to use this repository
 
-The product architecture is planned around a few stable layers:
+## License
 
-### Client Layer
-
-- Desktop or terminal-facing user experience
-- Session navigation, input handling, output rendering
-- Permission prompts and user approvals
-
-### Runtime Layer
-
-- Turn processing and task orchestration
-- Tool scheduling and execution control
-- Context assembly, memory, and state transitions
-
-### Provider Layer
-
-- Model provider abstraction
-- Authentication and credential handling
-- Request/response normalization
-- Streaming and event translation
-
-### Tool Layer
-
-- Local system tools
-- External service integrations
-- Structured schemas for tool inputs and outputs
-- Safety rules and execution policy
-
-## Current Repository Status
-
-This repository is currently in an early foundation stage.
-
-At the moment, it contains:
-
-- Initial brand assets
-- Early project framing
-- A first pass at visual identity for Dopax
-
-The runtime, client, protocol, and implementation layers described above are product direction, not a published feature-complete release in this repository yet.
-
-## Repository Contents
-
-- `dopax-primary.svg`: primary horizontal logo
-- `dopax-mark.svg`: icon-only brand mark
-- `README.md`: project overview and direction
-
-## Brand Notes
-
-The current visual system uses:
-
-- A rounded outer frame for a stable and product-led silhouette
-- Twin internal rails that suggest routing, orchestration, and handoff
-- A deep ink monochrome system to keep the logo and UI aligned
-- A heavier wordmark that reads cleanly on product surfaces
-
-Core colors:
-
-- `#2F445C`
-- `#708399`
-- `#F2F5F8`
-- `#FCFDFE`
-
-## Near-Term Priorities
-
-The next practical milestones are:
-
-1. Define the first runnable client surface
-2. Establish core session and tool abstractions
-3. Implement a minimal local workflow loop
-4. Add authentication and provider integration boundaries
-5. Expand repository structure beyond brand assets
-
-## Positioning
-
-Dopax is meant to become a serious client for intelligent computer I/O operations: not only for asking questions, but for planning work, taking action, and staying accountable to the state of a real project.
+This repository currently continues to follow the upstream license model and is distributed under [Apache-2.0](./LICENSE).
