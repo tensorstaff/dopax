@@ -1,60 +1,64 @@
-<p align="center"><code>npm i -g @openai/codex</code><br />or <code>brew install --cask codex</code></p>
-<p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
-<p align="center">
-  <img src="https://github.com/openai/codex/blob/main/.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" />
-</p>
-</br>
-If you want Codex in your code editor (VS Code, Cursor, Windsurf), <a href="https://developers.openai.com/codex/ide">install in your IDE.</a>
-</br>If you want the desktop app experience, run <code>codex app</code> or visit <a href="https://chatgpt.com/codex?app-landing-page=true">the Codex App page</a>.
-</br>If you are looking for the <em>cloud-based agent</em> from OpenAI, <strong>Codex Web</strong>, go to <a href="https://chatgpt.com/codex">chatgpt.com/codex</a>.</p>
+# Dopax
 
----
+Dopax is a fork of [OpenAI Codex](https://github.com/openai/codex), focused on custom product work, workflow experiments, and project-specific extensions built on top of the Codex codebase.
 
-## Quickstart
+This repository keeps the upstream Codex architecture and core capabilities as its foundation while evolving in its own direction over time.
 
-### Installing and running Codex CLI
+## What This Project Is
 
-Install globally with your preferred package manager:
+- A Codex-based project built on top of the upstream `openai/codex` repository
+- A place to develop custom behavior, integrations, and product ideas
+- A fork that is intended to stay aware of upstream changes so it can continue to sync from the official project when needed
 
-```shell
-# Install using npm
-npm install -g @openai/codex
+## Current Status
+
+This project is still under active development and restructuring.
+
+There are currently **no released packages** for this repository:
+
+- no installable binary releases
+- no npm package
+- no Homebrew package
+
+For now, the project should be built and run directly from source.
+
+## Relationship To Upstream
+
+- Upstream repository: [`openai/codex`](https://github.com/openai/codex)
+- This repository is a maintained fork with project-specific customization
+- Some structure, docs, and implementation details still reflect the upstream layout and will be gradually adapted for Dopax
+
+## Local Development
+
+The recommended way to build and run the project is from the `codex-rs` workspace:
+
+```bash
+git clone https://github.com/tensorstaff/dopax.git
+cd dopax/codex-rs
+
+cargo build
+cargo run --bin codex -- "explain this codebase to me"
 ```
 
-```shell
-# Install using Homebrew
-brew install --cask codex
+If you are working on the repository regularly, you can also use the root `just` helpers:
+
+```bash
+just fmt
+just fix -p <crate>
 ```
 
-Then simply run `codex` to get started.
+Additional documentation:
 
-<details>
-<summary>You can also go to the <a href="https://github.com/openai/codex/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
+- [Installing and building](./docs/install.md)
+- [Contributing](./docs/contributing.md)
 
-Each GitHub Release contains many executables, but in practice, you likely want one of these:
+## Notes
 
-- macOS
-  - Apple Silicon/arm64: `codex-aarch64-apple-darwin.tar.gz`
-  - x86_64 (older Mac hardware): `codex-x86_64-apple-darwin.tar.gz`
-- Linux
-  - x86_64: `codex-x86_64-unknown-linux-musl.tar.gz`
-  - arm64: `codex-aarch64-unknown-linux-musl.tar.gz`
+- Some repository documentation still describes the original upstream Codex project
+- The README, docs structure, release process, and project positioning will continue to be revised for Dopax
+- Until an official release process exists, source builds are the primary way to use this repository
 
-Each archive contains a single entry with the platform baked into the name (e.g., `codex-x86_64-unknown-linux-musl`), so you likely want to rename it to `codex` after extracting it.
+## License
 
-</details>
+This repository currently continues to follow the upstream license model and is distributed under [Apache-2.0](./LICENSE).
 
-### Using Codex with your ChatGPT plan
-
-Run `codex` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
-
-You can also use Codex with an API key, but this requires [additional setup](https://developers.openai.com/codex/auth#sign-in-with-an-api-key).
-
-## Docs
-
-- [**Codex Documentation**](https://developers.openai.com/codex)
-- [**Contributing**](./docs/contributing.md)
-- [**Installing & building**](./docs/install.md)
-- [**Open source fund**](./docs/open-source-fund.md)
-
-This repository is licensed under the [Apache-2.0 License](LICENSE).
